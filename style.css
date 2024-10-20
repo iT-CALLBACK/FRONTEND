@@ -1,0 +1,83 @@
+body {
+	/* Устанавливаем основные параметры шрифта и оформление */
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	margin: 0;
+	/* Фоновый градиент для яркого оформления */
+	background: linear-gradient(135deg, #f06, #4a90e2);
+	color: white;
+}
+
+#game {
+	/* Сетка для игрового поля 3x3 */
+	display: grid;
+	grid-template-columns: repeat(3, 120px);
+	grid-template-rows: repeat(3, 120px);
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.cell {
+	/* Оформление клетки игрового поля */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(255, 255, 255, 0.8);
+	/* Полупрозрачный фон для клеток */
+	border-radius: 12px;
+	font-size: 3rem;
+	font-weight: bold;
+	color: #333;
+	cursor: pointer;
+	/* Тень для клеток */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	/* Плавные переходы при наведении */
+	transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cell:hover {
+	/* Изменяем цвет и увеличиваем размер клетки при наведении */
+	background-color: #f0f0f0;
+	transform: scale(1.05);
+}
+
+.winning {
+	/* Оформление выигрышной клетки */
+	background-color: #ffeb3b;
+	/* Анимация свечения для выделения выигрышной линии */
+	animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+	from {
+		/* Начальные параметры анимации свечения */
+		box-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b, 0 0 30px #ffeb3b;
+	}
+
+	to {
+		/* Конечные параметры анимации свечения */
+		box-shadow: 0 0 20px #ffeb3b, 0 0 30px #ffeb3b, 0 0 40px #ffeb3b;
+	}
+}
+
+button {
+	/* Оформление кнопки сброса игры */
+	background-color: #333;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	font-size: 1.2rem;
+	border-radius: 8px;
+	cursor: pointer;
+	/* Плавный переход цвета фона при наведении */
+	transition: background-color 0.3s ease;
+}
+
+button:hover {
+	/* Изменение цвета кнопки при наведении */
+	background-color: #555;
+}
